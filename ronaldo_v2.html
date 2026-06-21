@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CR7 — The Legend</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;300;400;600;700&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">CR<em>7</em></div>
+    <ul>
+      <li><a href="#journey">Career</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#finale">Portugal</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Glowing orb -->
+    <div class="hero-orb"></div>
+
+    <!-- Animated rings SVG -->
+    <div class="hero-ring" style="width:min(480px,37vw);height:min(480px,37vw);">
+      <svg viewBox="0 0 480 480" width="100%" height="100%">
+        <circle class="ring-green" cx="240" cy="240" r="228" fill="none" stroke="#006600" stroke-width="2.5"
+          stroke-dasharray="60 30 20 80" stroke-linecap="round" />
+        <circle class="ring-pink" cx="240" cy="240" r="218" fill="none" stroke="#ff3e7a" stroke-width="1.8"
+          stroke-dasharray="40 60 15 90" stroke-linecap="round" />
+      </svg>
+    </div>
+
+    <!-- CR7 Photo -->
+    <img id="cr7-hero-img" src="img/ronaldo-removebg-preview.png" alt="Cristiano Ronaldo" />
+
+    <div class="hero-ghost">CR7</div>
+    <div class="hero-inner">
+      <p class="hero-tag" id="htag">Cristiano Ronaldo dos Santos Aveiro</p>
+      <h1 class="hero-name" id="hname">
+        <span class="cr">CR</span><span class="sev">7</span>
+      </h1>
+      <p class="hero-sub" id="hsub">The Journey of a Legend</p>
+      <div class="flag-line" id="hflag">
+        <div class="fl" style="background:#006600;width:64px;"></div>
+        <div class="fl" style="background:#C8102E;width:96px;margin:0 3px;"></div>
+        <div class="fl" style="background:#FFD700;width:20px;"></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- SIDE DOTS -->
+  <div id="side-dots"></div>
+
+  <!-- JOURNEY -->
+  <div id="journey">
+    <div class="sticky-scene" id="sticky-scene">
+      <div class="img-col" id="img-col">
+        <div class="img-accent-bar" id="accent-bar"></div>
+      </div>
+      <div class="txt-col" id="txt-col">
+        <div class="txt-counter" id="tc-counter">01 / 07</div>
+        <div class="txt-country" id="tc-country">Portugal</div>
+        <h2 class="txt-club" id="tc-club">Sporting CP</h2>
+        <p class="txt-years" id="tc-years">2002 – 2003</p>
+        <div class="txt-divider" id="tc-div"></div>
+        <p class="txt-desc" id="tc-desc">—</p>
+        <div class="txt-stats" id="tc-stats">
+          <div>
+            <span class="ts-num" id="tc-goals">5</span>
+            <span class="ts-lbl">Goals</span>
+          </div>
+        </div>
+        <div class="txt-titles" id="tc-titles" style="display:none;"></div>
+        <div class="next-label" id="tc-next" style="display:none;">
+          <span>Next</span>
+          <div class="next-arrow"></div>
+          <strong id="tc-next-name"></strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO GALLERY -->
+  <section id="gallery">
+    <p class="section-label">Photo Album</p>
+    <h2 class="section-title">Moments of a <em>Legend</em></h2>
+    <div class="gallery-grid" id="gallery-grid">
+      <div class="g-item" data-src="https://i.pinimg.com/1200x/94/11/ba/9411ba44f2a3935db7a8f51c65fd775c.jpg">
+        <img src="https://i.pinimg.com/736x/4c/b2/82/4cb2824fb3eb63b17c91c321b3cd1e9e.jpg " alt="CR7 Portugal"
+          loading="lazy">
+        <div class="g-overlay"><span class="g-caption">Portugal · Captain</span></div>
+      </div>
+      <div class="g-item" data-src="https://i.pinimg.com/1200x/37/d9/82/37d982c64409c266eeeb9eb0d6dba660.jpg">
+        <img src="https://i.pinimg.com/1200x/37/d9/82/37d982c64409c266eeeb9eb0d6dba660.jpg" alt="Sporting CP"
+          loading="lazy">
+        <div class="g-overlay"><span class="g-caption">Sporting CP · The Beginning</span></div>
+      </div>
+      <div class="g-item" data-src="https://i.pinimg.com/1200x/f6/32/65/f63265c3d56e4400d8b2f3a3c0376964.jpg">
+        <img src="https://i.pinimg.com/1200x/f6/32/65/f63265c3d56e4400d8b2f3a3c0376964.jpg" alt="Man Utd"
+          loading="lazy">
+        <div class="g-overlay"><span class="g-caption">Manchester United · Glory Days</span></div>
+      </div>
+      <div class="g-item" data-src="https://i.pinimg.com/736x/48/a7/e4/48a7e411eed02dec8ec7893dd92c7d07.jpg">
+        <img src="https://i.pinimg.com/736x/48/a7/e4/48a7e411eed02dec8ec7893dd92c7d07.jpg" alt="Real Madrid"
+          loading="lazy">
+        <div class="g-overlay"><span class="g-caption">Real Madrid · The Golden Era</span></div>
+      </div>
+      <div class="g-item" data-src="https://i.pinimg.com/736x/ce/db/0e/cedb0e7be027700306f6ad1e4245c3ae.jpg">
+        <img src="https://i.pinimg.com/736x/ce/db/0e/cedb0e7be027700306f6ad1e4245c3ae.jpg" alt="Juventus"
+          loading="lazy">
+        <div class="g-overlay"><span class="g-caption">Juventus · Turin Chapter</span></div>
+      </div>
+      <div class="g-item" data-src="https://i.pinimg.com/1200x/06/5d/3a/065d3a52fdc02e243b2187debccb156a.jpg">
+        <img src="https://i.pinimg.com/1200x/06/5d/3a/065d3a52fdc02e243b2187debccb156a.jpg" alt="Man Utd Return"
+          loading="lazy">
+        <div class="g-overlay"><span class="g-caption">Manchester United · The Return</span></div>
+      </div>
+      <div class="g-item" data-src="https://i.pinimg.com/736x/3d/c9/db/3dc9dbbeeaf60e3746a377f8c8e03586.jpg">
+        <img src="https://i.pinimg.com/736x/3d/c9/db/3dc9dbbeeaf60e3746a377f8c8e03586.jpg" alt="Al Nassr"
+          loading="lazy">
+        <div class="g-overlay"><span class="g-caption">Al Nassr · New Chapter</span></div>
+      </div>
+      <div class="g-item" data-src="https://i.pinimg.com/1200x/94/11/ba/9411ba44f2a3935db7a8f51c65fd775c.jpg">
+        <img src="https://i.pinimg.com/1200x/94/11/ba/9411ba44f2a3935db7a8f51c65fd775c.jpg" alt="CR7 Pride"
+          loading="lazy">
+        <div class="g-overlay"><span class="g-caption">Portugal · National Pride</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox">
+    <span id="lb-close">✕ CLOSE</span>
+    <img id="lb-img" src="" alt="CR7 Photo" />
+  </div>
+
+  <!-- VIDEO SECTION -->
+  <section id="videos">
+    <p class="section-label">Watch & Relive</p>
+    <h2 class="section-title">CR7 <em>Highlights</em></h2>
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-thumb">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/mmeLCAP74KA?si=WESQW_7Y1Rg7Mc9j"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <p class="video-tag">Best Goals</p>
+          <p class="video-title">Top 50 Ronaldo Goals Of All Time</p>
+          <p class="video-meta">YouTube · HD</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/DJaML3tWoh4?si=Ws_eWwIzUnL1xCv9"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <p class="video-tag">Skills</p>
+          <p class="video-title">Ronaldo's Most Insane Skills & Dribbles</p>
+          <p class="video-meta">YouTube · HD</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/mhfJSTJTnXU?si=pCe_Yaay2KVa6MGF"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/tqwQQK54dgA?si=ahJuUqCrfOCsmPDK"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <p class="video-tag">Portugal</p>
+          <p class="video-title">Ronaldo's Greatest International Moments</p>
+          <p class="video-meta">YouTube · HD</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-thumb">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/tqwQQK54dgA?si=ahJuUqCrfOCsmPDK"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-info">
+        <p class="video-tag">Portugal</p>
+        <p class="video-title">Ronaldo's Greatest International Moments</p>
+        <p class="video-meta">YouTube · HD</p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- PORTUGAL FINALE -->
+  <section id="finale">
+    <div class="fin-ghost">GOAT</div>
+    <div class="fin-flag">
+      <div class="fin-fl" style="background:#006600;width:80px;"></div>
+      <div class="fin-fl" style="background:#C8102E;width:120px;margin:0 4px;"></div>
+      <div class="fin-fl" style="background:#FFD700;width:22px;"></div>
+    </div>
+    <p class="fin-eyebrow">For the Nation · For the Game</p>
+    <h2 class="fin-title">The <em>Legend</em><br>Never Retires</h2>
+    <p class="fin-quote">
+      "I'm <b>not a perfectionist</b> — but I do want everything to be perfect.
+      <b>I want</b> to do justice to <b>my abilities.</b>"
+    </p>
+    <p class="fin-author">— Cristiano Ronaldo</p>
+    <div class="fin-stats">
+      <div class="fin-stat"><span class="fin-stat-n">900+</span><span class="fin-stat-l">Career Goals</span></div>
+      <div class="fin-stat"><span class="fin-stat-n">212+</span><span class="fin-stat-l">International Goals</span>
+      </div>
+      <div class="fin-stat"><span class="fin-stat-n">5</span><span class="fin-stat-l">Ballon d'Or</span></div>
+      <div class="fin-stat"><span class="fin-stat-n">5</span><span class="fin-stat-l">Champions League</span></div>
+      <div class="fin-stat"><span class="fin-stat-n">1</span><span class="fin-stat-l">Euro Title</span></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="ft-logo">CR<em>7</em></div>
+    <p class="ft-note">Fan Tribute · Portugal 🇵🇹 · Made with Passion</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
